@@ -2,18 +2,12 @@
 
 ## Overview
 
-A calculator that determines [Body Mass Index (BMI)](https://simple.wikipedia.org/wiki/Body_mass_index) and/or [Basal Metabolic Rate (BMR)](https://en.wikipedia.org/wiki/Basal_metabolic_rate). Written in Python.
+A calculator that determines Body Mass Index (BMI) and/or Basal Metabolic Rate (BMR). Written in Python.
 
-## Usage:
+### What is BMI?
 
-Be sure to have Python downloaded before you begin.
+BMI is a medical screeening tool that determines if someone is in a healthy weight range for their height. It helps you figure out if you either underweight, healthy, or overweight. [(More info)](https://simple.wikipedia.org/wiki/Body_mass_index)
 
-1. Download file and extract.
+### What is BMR?
 
-2. Open file directory.
-
-3. Right click "health-calculator.py".
-
-4. Move cursor to "Open with".
-
-5. Select "Python". You are now using the program.
+BMR is a tool used to measure someone's daily calorie needs for their body to sustain itself. It also determines how many calories one needs depending on how active they are daily. [(More info)](https://en.wikipedia.org/wiki/Basal_metabolic_rate)
