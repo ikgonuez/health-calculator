@@ -1,5 +1,9 @@
-#This module will be used for exiting the program upon user input.
+# This module will be used for exiting the program upon user input.
 import sys
+
+# Defining an error
+err = "ERROR: Invalid input. Try again."
+
 
 # FUNCTIONS:
 def height_input():
@@ -8,16 +12,14 @@ def height_input():
     """
 
     while True:
-
         try:
-
             h = float(input("Enter height: "))
 
             return h
 
         except ValueError:
+            print(err)
 
-            print("ERROR: Invalid input. Try again.")
 
 def weight_input():
     """
@@ -25,16 +27,14 @@ def weight_input():
     """
 
     while True:
-
         try:
-
             w = float(input("Enter weight: "))
 
             return w
 
         except ValueError:
+            print(err)
 
-            print("ERROR: Invalid input. Try again.")
 
 def age_input():
     """
@@ -42,16 +42,14 @@ def age_input():
     """
 
     while True:
-
         try:
-
             a = float(input("Enter age: "))
 
             return a
-        
-        except ValueError:
 
-            print("ERROR: Invalid input. Try again.")
+        except ValueError:
+            print(err)
+
 
 def bmi_imperial(w, h):
     """
@@ -59,9 +57,10 @@ def bmi_imperial(w, h):
     w = weight, h = height
     """
 
-    bmi_imperial_result = (w/h**2) * 703
+    bmi_imperial_result = (w / h**2) * 704
 
     return bmi_imperial_result
+
 
 def bmi_metric(w, h):
     """
@@ -69,18 +68,20 @@ def bmi_metric(w, h):
     w = weight, h = height
     """
 
-    bmi_metric_result = (w/h**2)
+    bmi_metric_result = w / h**2
 
     return bmi_metric_result
+
 
 def bmi_results(r):
     """
     Shows the user their BMI number along with a chart to determine body mass range.
     """
 
-    print(f"\nYour BMI is {round(r, 2)}\n") #2 decimal number limit
+    print(f"\nYour BMI is {round(r, 2)}\n")  # 2 decimal number limit
     print("Take your number and match it to the chart below:\n")
-    print("""
+    print(
+        """
     CATERGORY               |   BMI RANGE
     ----------------------------------------
     Severely Underweight    |   <16.491
@@ -88,7 +89,9 @@ def bmi_results(r):
     Healthy                 |   18.5 - 24.99
     Overweight              |   25 - 29.99
     Obese                   |   >30
-    """)
+    """
+    )
+
 
 def cm2m(cm):
     """
@@ -99,14 +102,16 @@ def cm2m(cm):
 
     return m
 
+
 def lbs2kg(lbs):
     """
     Pounds to kilograms converter.
     """
 
-    kg = lbs/2.2046
+    kg = lbs / 2.2046
 
     return kg
+
 
 def in2cm(i):
     """
@@ -116,6 +121,7 @@ def in2cm(i):
     cm = i * 2.54
 
     return cm
+
 
 def bmr_male(w, h, a):
     """
@@ -127,6 +133,7 @@ def bmr_male(w, h, a):
 
     return bmr
 
+
 def bmr_female(w, h, a):
     """
     Calculates BMR for females.
@@ -137,14 +144,18 @@ def bmr_female(w, h, a):
 
     return bmr
 
+
 def bmr_results(r):
     """
     Shows the user their BMR number along with a chart for daily calorie needs.
     """
 
     print(f"\nYour BMR is {round(r)} calories.\n")
-    print("Daily calorie needs are displayed below depending on how active you are daily:\n")
-    print(f"""
+    print(
+        "Daily calorie needs are displayed below depending on how active you are daily:\n"
+    )
+    print(
+        f"""
     DAILY ACTIVITY LEVEL                                                |   Calories
     -----------------------------------------------------------------------------------
     Sedentary (little to no exercise in a day)                          |   {round(r * 1.2)}
@@ -152,7 +163,9 @@ def bmr_results(r):
     Moderately Active (moderate exercise/sports 3-5 days/week)          |   {round(r * 1.55)}
     Very Active (hard exercise/sports 6-7 days a week)                  |   {round(r * 1.725)}
     Extremely Active (very hard exercise/sports and/or physical job)    |   {round(r * 1.9)}
-    """)
+    """
+    )
+
 
 def restart_or_exit():
     """
@@ -160,43 +173,38 @@ def restart_or_exit():
     """
 
     while True:
-
         end_choice = input("Enter 1 to restart or 2 to end program: ")
 
         if end_choice == "1":
-
             print("\nProgram restarted.")
 
             break
-        
-        elif end_choice == "2":
 
+        elif end_choice == "2":
             print("\nProgram finished.")
 
             sys.exit()
 
         else:
+            print(err)
 
-            print("ERROR: Invalid input. Try again.")
 
 # MAIN PROGRAM:
 while True:
-
     # I originally coded the program to make users measure their BMI before their BMR,
-    # but it's better for users to have a choice on what to start with and not have to 
+    # but it's better for users to have a choice on what to start with and not have to
     # slog through one part of the program to get to the next.
-    start_choice = input("\nEnter 1 for Body Mass Index (BMI) or 2 for Basal Metabolic Rate (BMR): ")
+    start_choice = input(
+        "\nEnter 1 for Body Mass Index (BMI) or 2 for Basal Metabolic Rate (BMR): "
+    )
 
     if start_choice == "1":
-
         print("\nBMI selected.")
 
         while True:
-        
             bmi_measure = input("\nEnter 1 for imperial or 2 for metric: ")
 
             if bmi_measure == "1":
-
                 print("\nImperial selected.")
                 print("Height: Inches\nWeight: Pounds\n")
 
@@ -212,14 +220,14 @@ while True:
                 break
 
             elif bmi_measure == "2":
-
                 print("Metric selected.")
                 print("Height: Centimeters\nWeight: Kilograms\n")
 
                 # For the BMI equation, the metric version uses meters instead of centimeters.
                 # This is fine, but I find centimeters to be more precise and less error-prone for
                 # the users, so I made a "centimter-to-meter" converter just to bypass this little
-                # problem. The BMR equation uses centimeters, so I want this one to work the same.
+                # problem. The BMR equation uses centimeters, so I want this
+                # one to work the same.
                 bmi_height = cm2m(height_input())
                 bmi_weight = weight_input()
 
@@ -228,28 +236,26 @@ while True:
                 bmi_results(user_bmi)
 
                 restart_or_exit()
-                
+
                 break
 
             else:
-
-                print("ERROR: Invalid input. Try again.")
+                print(err)
 
     elif start_choice == "2":
-
         print("\nBMR Selected.")
 
         while True:
-
-            bmr_measure = input("\nEnter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), or 4 for metirc (female): ")
+            bmr_measure = input(
+                "\nEnter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), or 4 for metirc (female): "
+            )
 
             if bmr_measure == "1":
-
                 print("\nImerial (male) selected.")
                 print("Height: Inches\nWeight: Pounds\n")
 
-                # For BMR calculation, I am using the Mifflin-St. Jeor equation. However, the equation only supports metric meausrements. 
-                # Since I couldn't find an imperial version, I had to get creative and convert the imperial measurements submitted by the 
+                # For BMR calculation, I am using the Mifflin-St. Jeor equation. However, the equation only supports metric meausrements.
+                # Since I couldn't find an imperial version, I had to get creative and convert the imperial measurements submitted by the
                 # user into metric ones as you can see below:
                 bmr_height = in2cm(height_input())
                 bmr_weight = lbs2kg(weight_input())
@@ -264,7 +270,6 @@ while True:
                 break
 
             elif bmr_measure == "2":
-
                 print("\nImerial (female) selected.")
                 print("Height: Inches\nWeight: Pounds\n")
 
@@ -281,7 +286,6 @@ while True:
                 break
 
             elif bmr_measure == "3":
-
                 print("\nMetric (male) selected.")
                 print("Height: Centimeters\nWeight: Kilograms\n")
 
@@ -298,10 +302,9 @@ while True:
                 break
 
             elif bmr_measure == "4":
-
                 print("\nMetric (female) selected.")
                 print("Height: Centimeters\nWeight: Kilograms\n")
-                
+
                 bmr_height = height_input()
                 bmr_weight = weight_input()
                 bmr_age = age_input()
@@ -315,9 +318,7 @@ while True:
                 break
 
             else:
-
-                print("ERROR: Invalid input. Try again.")
+                print(err)
 
     else:
-
-        print("ERROR: Invalid input. Try again.")
+        print(err)
