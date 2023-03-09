@@ -1,6 +1,6 @@
 # Health Calculator
 
-## Overview
+## Overview:
 
 A calculator that determines Body Mass Index (BMI) and/or Basal Metabolic Rate (BMR). Imperial and metric measurements are both supported. The program is written in Python.
 
@@ -16,7 +16,7 @@ BMR is a tool used to measure someone's daily calorie needs for their body to su
 
 Run the program "health-calculator.py" through the command-line. If you don't know how, just consult this [link](https://www.wikihow.com/Use-Windows-Command-Prompt-to-Run-a-Python-File).
 
-## Execution
+## Execution:
 
 The program will start by giving the user an input prompt that lets you choose between BMI or BMR.
 
