@@ -84,7 +84,7 @@ def bmi_results(r):
         """
     CATERGORY               |   BMI RANGE
     ----------------------------------------
-    Severely Underweight    |   <16.491
+    Severely Underweight    |   <16.49
     Underweight             |   16.5 - 18.49
     Healthy                 |   18.5 - 24.99
     Overweight              |   25 - 29.99
@@ -156,7 +156,7 @@ def bmr_results(r):
     )
     print(
         f"""
-    DAILY ACTIVITY LEVEL                                                |   Calories
+    DAILY ACTIVITY LEVEL                                                |   CALORIES
     -----------------------------------------------------------------------------------
     Sedentary (little to no exercise in a day)                          |   {round(r * 1.2)}
     Lightly Active (light exercise/sports 1-3 days/week)                |   {round(r * 1.375)}
@@ -247,7 +247,7 @@ while True:
 
         while True:
             bmr_measure = input(
-                "\nEnter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), or 4 for metirc (female): "
+                "\nEnter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), or 4 for metric (female): "
             )
 
             if bmr_measure == "1":
