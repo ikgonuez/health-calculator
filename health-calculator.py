@@ -225,7 +225,7 @@ while True:
 
                 # For the BMI equation, the metric version uses meters instead of centimeters.
                 # This is fine, but I find centimeters to be more precise and less error-prone for
-                # the users, so I made a "centimter-to-meter" converter just to bypass this little
+                # the users, so I made a "centimeter-to-meter" converter just to bypass this little
                 # problem. The BMR equation uses centimeters, so I want this
                 # one to work the same.
                 bmi_height = cm2m(height_input())
@@ -247,15 +247,16 @@ while True:
 
         while True:
             bmr_measure = input(
-                "\nEnter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), or 4 for metric (female): "
+                "\nEnter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), 4 for metric (female): "
             )
 
             if bmr_measure == "1":
                 print("\nImerial (male) selected.")
                 print("Height: Inches\nWeight: Pounds\n")
 
-                # For BMR calculation, I am using the Mifflin-St. Jeor equation. However, the equation only supports metric meausrements.
-                # Since I couldn't find an imperial version, I had to get creative and convert the imperial measurements submitted by the
+                # For BMR calculation, I am using the Mifflin equation. However, the equation
+                # only supports metric measurements. Since I couldn't find an imperial version, I had
+                # to get creative and convert the imperial measurements submitted by the
                 # user into metric ones as you can see below:
                 bmr_height = in2cm(height_input())
                 bmr_weight = lbs2kg(weight_input())
@@ -270,7 +271,7 @@ while True:
                 break
 
             elif bmr_measure == "2":
-                print("\nImerial (female) selected.")
+                print("\nImperial (female) selected.")
                 print("Height: Inches\nWeight: Pounds\n")
 
                 bmr_height = in2cm(height_input())
@@ -322,3 +323,4 @@ while True:
 
     else:
         print(err)
+
