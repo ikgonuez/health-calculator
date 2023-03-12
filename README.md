@@ -44,7 +44,7 @@ Finally, the BMI result number will be shown, along with a chart to match it to.
 
 `Your BMI is <result number>`
 
-CATERGORY               |   BMI RANGE
+CATEGORY               |   BMI RANGE
 ----------------------- | -------------
 Severely Underweight    |   <16.49
 Underweight             |   16.5 - 18.49
@@ -56,7 +56,7 @@ Obese                   |   >30
 
 If BMR is chosen, the user will be given four options.
 
-`Enter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), or 4 for metric (female): `
+`Enter 1 for imperial (male), 2 for imperial (female), 3 for metric (male), 4 for metric (female): `
 
 A prompt will show what measurements need to be used (depending on what system they choose), along with prompts to enter height, weight, and age.
 
