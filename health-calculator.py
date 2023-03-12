@@ -82,7 +82,7 @@ def bmi_results(r):
     print("Take your number and match it to the chart below:\n")
     print(
         """
-    CATERGORY               |   BMI RANGE
+    CATEGORY               |   BMI RANGE
     ----------------------------------------
     Severely Underweight    |   <16.49
     Underweight             |   16.5 - 18.49
